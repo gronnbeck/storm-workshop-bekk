@@ -8,3 +8,7 @@ admin/admin
 
 
 brew install clojure
+
+Last ned datasett:
+
+http://data.dft.gov.uk.s3.amazonaws.com/road-accidents-safety-data/Stats19-Data1979-2004.zip
