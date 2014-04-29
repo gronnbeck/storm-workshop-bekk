@@ -12,6 +12,7 @@ public enum AccidentFields {
     NUMBER_OF_VEHICLES(7),
     NUMBER_OF_CASUALTIES(8),
     DATE(9),
+    DAY_OF_WEEK(10),
     SPEED_LIMIT(17),
     LIGHT_CONDITIONS(25),
     WEATHER_CONDITIONS(26),
