@@ -1,8 +1,5 @@
 package no.bekk.storm.domain;
 
-/**
- * Created by steffen stenersen on 20/04/14.
- */
 public enum WeatherCondition {
     FINE_NO_HIGH_WINDS("1"),
     RAINING_NO_HIGH_WINDS("2"),

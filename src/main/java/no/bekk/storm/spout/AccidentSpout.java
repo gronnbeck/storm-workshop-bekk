@@ -18,9 +18,6 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.LinkedBlockingDeque;
 
-/**
- * Created by steffen stenersen on 20/04/14.
- */
 public class AccidentSpout implements IBatchSpout {
 
     private LinkedBlockingDeque<String> queue;
@@ -110,13 +107,4 @@ public class AccidentSpout implements IBatchSpout {
     public Fields getOutputFields() {
         return outputFields;
     }
-
-    public static void main(String[] args) throws IOException {
-        AccidentSpout spout = new AccidentSpout(DataSource.ACCIDENT, 5, new Fields(), AccidentFields.getIndices());
-        spout.open(null, null);
-        for(int i = 0; i < 30; i++)
-            System.out.println(spout.queue.poll());
-    }
-
-
 }

@@ -10,9 +10,6 @@ import storm.trident.tuple.TridentTuple;
 
 import java.util.Map;
 
-/**
- * Created by steffen stenersen on 20/04/14.
- */
 public class FilterFunction implements Filter {
 
     @Override

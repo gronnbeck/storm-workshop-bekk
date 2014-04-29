@@ -9,9 +9,6 @@ import no.bekk.storm.functions.PrintFunction;
 import no.bekk.storm.spout.AccidentSpout;
 import storm.trident.TridentTopology;
 
-/**
- * Created by steffen stenersen on 20/04/14.
- */
 public class ExampleTopology {
     public static void main(String[] args) throws Exception {
         TridentTopology topology = new TridentTopology();

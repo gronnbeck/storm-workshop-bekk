@@ -1,8 +1,5 @@
 package no.bekk.storm.domain;
 
-/**
- * Created by steffen stenersen on 20/04/14.
- */
 public enum DataSource {
     ACCIDENT("Accidents7904.csv"),
     VEHICLE("Vehicles7904.csv"),

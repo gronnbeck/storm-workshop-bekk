@@ -5,9 +5,6 @@ import backtype.storm.tuple.Fields;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by steffen stenersen on 20/04/14.
- */
 public enum AccidentFields {
 
     ACCIDENT_INDEX(0),
