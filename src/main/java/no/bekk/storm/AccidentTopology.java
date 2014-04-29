@@ -3,6 +3,8 @@ package no.bekk.storm;
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
 import backtype.storm.tuple.Fields;
+import no.bekk.storm.domain.AccidentFields;
+import no.bekk.storm.domain.DataSource;
 import no.bekk.storm.functions.PrintFunction;
 import no.bekk.storm.spout.AccidentSpout;
 import storm.trident.TridentTopology;
@@ -13,9 +15,9 @@ import storm.trident.TridentTopology;
 public class AccidentTopology {
     public static void main(String[] args) throws Exception {
         TridentTopology topology = new TridentTopology();
-        topology.newStream("accidents",
-                new AccidentSpout()).each(new Fields("id", "value"), new PrintFunction(), new Fields("asdf"));
 
+        topology.newStream("accidents",
+                    new AccidentSpout(DataSource.ACCIDENT, 30, AccidentFields.getFields(), AccidentFields.getIndices())).each(AccidentFields.getFields(), new PrintFunction(), new Fields("asdf"));
 
         Config config = new Config();
         config.setDebug(true);
