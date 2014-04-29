@@ -57,15 +57,6 @@ public class AccidentSpout implements IBatchSpout {
 
     @Override
     public void emitBatch(long batchId, TridentCollector tridentCollector) {
-        System.out.println("Batch size: " + batchSize);
-        //0(accident_index), Accident_severity(6), num_vehiceles(7), num_casulties(8), Date(9), Speed limit(17),
-        //Light_Conditions(25),Weather_Conditions(26), road_surface_conditions(27)
-        //Accident_Index,Location_Easting_OSGR,Location_Northing_OSGR,Longitude,Latitude,Police_Force,Accident_Severity,
-        //        Number_of_Vehicles,Number_of_Casualties,Date,Day_of_Week,Time,Local_Authority_(District),Local_Authority_(Highway),
-        //        1st_Road_Class,1st_Road_Number,Road_Type,Speed_limit,Junction_Detail,Junction_Control,2nd_Road_Class,2nd_Road_Number,
-        //        Pedestrian_Crossing-Human_Control,Pedestrian_Crossing-Physical_Facilities,Light_Conditions,Weather_Conditions,
-        //        Road_Surface_Conditions,Special_Conditions_at_Site,Carriageway_Hazards,Urban_or_Rural_Area,
-        //        Did_Police_Officer_Attend_Scene_of_Accident,LSOA_of_Accident_Location
         String input;
 
         int read = 0;

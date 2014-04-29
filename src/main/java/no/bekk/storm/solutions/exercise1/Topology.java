@@ -1,11 +1,10 @@
-package no.bekk.storm;
+package no.bekk.storm.solutions.exercise1;
 
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
 import backtype.storm.tuple.Fields;
 import no.bekk.storm.domain.AccidentFields;
 import no.bekk.storm.domain.DataSource;
-import no.bekk.storm.solutions.exercise1.FilterFunction;
 import no.bekk.storm.functions.PrintFunction;
 import no.bekk.storm.spout.AccidentSpout;
 import storm.trident.TridentTopology;
@@ -13,7 +12,7 @@ import storm.trident.TridentTopology;
 /**
  * Created by steffen stenersen on 20/04/14.
  */
-public class AccidentTopology {
+public class Topology {
     public static void main(String[] args) throws Exception {
         TridentTopology topology = new TridentTopology();
 
