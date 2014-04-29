@@ -34,7 +34,6 @@ Her defineres en liste med hva som vi må, burde og er kult å ha med i workshop
 ### Tidsplan
 * 04.05.14 - 06.05.14: Jobbe med workshop på kveldstid
 * 08.05.14: Sende ut hva folk trenger å sette opp 
-* 
 
 ### Kjøreplan
 * Foredrag [45min]
