@@ -15,4 +15,13 @@ public enum DayOfWeek {
         this.code = code;
     }
 
+    public static String fromCode(String code) {
+        for (DayOfWeek dayOfWeek : DayOfWeek.values()) {
+            if(dayOfWeek.code.equals(code)) {
+                return dayOfWeek.name();
+            }
+        }
+        return null;
+    }
+
 }
