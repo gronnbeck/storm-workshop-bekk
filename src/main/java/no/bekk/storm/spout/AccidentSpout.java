@@ -41,7 +41,7 @@ public class AccidentSpout implements IBatchSpout {
         try {
             String path  = System.getProperty("user.dir");
 
-            FileReader file = new FileReader(path + "/Stats19-Data1979-2004/" + dataSource.filename);
+            FileReader file = new FileReader(path + "/datasett/" + dataSource.filename);
             br = new BufferedReader(file);
 
 
