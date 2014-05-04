@@ -6,9 +6,9 @@ import backtype.storm.tuple.Fields;
 import no.bekk.storm.domain.AccidentFields;
 import no.bekk.storm.domain.DataSource;
 import no.bekk.storm.domain.VehicleFields;
-import no.bekk.storm.functions.PrintFunction;
-import no.bekk.storm.solutions.exercise1.AgeFilter;
-import no.bekk.storm.spout.AccidentSpout;
+import no.bekk.storm.solutions.filters.AgeFilter;
+import no.bekk.storm.solutions.functions.PrintFunction;
+import no.bekk.storm.spout.FileReaderSpout;
 import storm.trident.Stream;
 import storm.trident.TridentTopology;
 import storm.trident.operation.builtin.Count;
@@ -22,15 +22,13 @@ public class Topology {
 
         List<String> joinedFields = AccidentFields.getFields().toList();
         joinedFields.add(VehicleFields.ACCIDENT_INDEX.getField());
-        Fields fields = new Fields(joinedFields);
-
 
         Stream accidents = topology.newStream("accidents",
-                new AccidentSpout(DataSource.ACCIDENT, 30, AccidentFields.getFields(), AccidentFields.getIndices()))
+                new FileReaderSpout(DataSource.ACCIDENT, 30, AccidentFields.getFields(), AccidentFields.getIndices()))
                 .project(new Fields(AccidentFields.ACCIDENT_INDEX.name(), AccidentFields.DAY_OF_WEEK.name()));
 
         Stream vehicle = topology.newStream("vehicle",
-                new AccidentSpout(DataSource.VEHICLE, 30, VehicleFields.getFields(), VehicleFields.getIndices()))
+                new FileReaderSpout(DataSource.VEHICLE, 30, VehicleFields.getFields(), VehicleFields.getIndices()))
                 .project(new Fields(VehicleFields.ACCIDENT_INDEX.getField(), VehicleFields.AGE_BAND_OF_DRIVER.getField()));
 
         topology.join(accidents, new Fields(AccidentFields.ACCIDENT_INDEX.name()), vehicle,

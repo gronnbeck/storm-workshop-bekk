@@ -5,8 +5,9 @@ import backtype.storm.LocalCluster;
 import backtype.storm.tuple.Fields;
 import no.bekk.storm.domain.AccidentFields;
 import no.bekk.storm.domain.DataSource;
-import no.bekk.storm.functions.PrintFunction;
-import no.bekk.storm.spout.AccidentSpout;
+import no.bekk.storm.solutions.filters.SnowFilter;
+import no.bekk.storm.solutions.functions.PrintFunction;
+import no.bekk.storm.spout.FileReaderSpout;
 import storm.trident.TridentTopology;
 
 public class Topology {
@@ -14,8 +15,8 @@ public class Topology {
         TridentTopology topology = new TridentTopology();
 
         topology.newStream("accidents",
-                    new AccidentSpout(DataSource.ACCIDENT, 30, AccidentFields.getFields(), AccidentFields.getIndices()))
-                .each(AccidentFields.getFields(), new FilterFunction())
+                    new FileReaderSpout(DataSource.ACCIDENT, 30, AccidentFields.getFields(), AccidentFields.getIndices()))
+                .each(AccidentFields.getFields(), new SnowFilter())
                 .each(AccidentFields.getFields(), new PrintFunction(), new Fields());
 
         Config config = new Config();

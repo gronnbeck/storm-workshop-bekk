@@ -5,8 +5,8 @@ import backtype.storm.LocalCluster;
 import backtype.storm.tuple.Fields;
 import no.bekk.storm.domain.AccidentFields;
 import no.bekk.storm.domain.DataSource;
-import no.bekk.storm.functions.PrintFunction;
-import no.bekk.storm.spout.AccidentSpout;
+import no.bekk.storm.solutions.functions.PrintFunction;
+import no.bekk.storm.spout.FileReaderSpout;
 import storm.trident.TridentTopology;
 
 public class ExampleTopology {
@@ -14,7 +14,8 @@ public class ExampleTopology {
         TridentTopology topology = new TridentTopology();
 
         topology.newStream("accidents",
-                    new AccidentSpout(DataSource.ACCIDENT, 30, AccidentFields.getFields(), AccidentFields.getIndices())).each(AccidentFields.getFields(), new PrintFunction(), new Fields("asdf"));
+                    new FileReaderSpout(DataSource.ACCIDENT, 30, AccidentFields.getFields(), AccidentFields.getIndices()))
+                .each(new Fields(AccidentFields.DAY_OF_WEEK.name()), new PrintFunction(), new Fields());
 
         Config config = new Config();
         config.setDebug(true);
