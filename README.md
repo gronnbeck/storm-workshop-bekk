@@ -41,4 +41,4 @@ Her defineres en liste med hva som vi må, burde og er kult å ha med i workshop
   - EventStore av Thomas [15min]
   - Introduksjon til Storm og Topologies [15min]
 * Pause med setup [15min]
-* Oppgaveløsning [105min]
+* Oppgaveløsning [90min]
