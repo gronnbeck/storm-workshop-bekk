@@ -74,16 +74,12 @@ public class AccidentSpout implements IBatchSpout {
             else {
                 String[] msgArray = message.split(",");
 
-                ArrayList<String> vals = new ArrayList<String>();
+                ArrayList<String> values = new ArrayList<String>();
                 for (Integer index : indices) {
-                    vals.add(msgArray[index]);
+                    values.add(msgArray[index]);
                 }
 
-                Values values = new Values(msgArray[0], msgArray[6], msgArray[7], msgArray[8], msgArray[9], msgArray[17],
-                        msgArray[25],msgArray[26],msgArray[27]);
-
-
-                tridentCollector.emit(new Values(vals.toArray()));
+                tridentCollector.emit(new Values(values.toArray()));
             }
         }
     }
