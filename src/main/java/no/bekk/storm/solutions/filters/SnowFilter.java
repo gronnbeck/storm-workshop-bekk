@@ -1,4 +1,4 @@
-package no.bekk.storm.solutions.exercise1;
+package no.bekk.storm.solutions.filters;
 
 import no.bekk.storm.domain.AccidentFields;
 import no.bekk.storm.domain.WeatherCondition;
@@ -10,7 +10,7 @@ import storm.trident.tuple.TridentTuple;
 
 import java.util.Map;
 
-public class FilterFunction implements Filter {
+public class SnowFilter implements Filter {
 
     @Override
     public void prepare(Map map, TridentOperationContext tridentOperationContext) {

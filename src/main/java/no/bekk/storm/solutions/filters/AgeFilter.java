@@ -1,8 +1,6 @@
-package no.bekk.storm.solutions.exercise1;
+package no.bekk.storm.solutions.filters;
 
-import no.bekk.storm.domain.AccidentFields;
 import no.bekk.storm.domain.VehicleFields;
-import no.bekk.storm.domain.WeatherCondition;
 import storm.trident.operation.Filter;
 import storm.trident.operation.TridentOperationContext;
 import storm.trident.tuple.TridentTuple;

@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.LinkedBlockingDeque;
 
-public class AccidentSpout implements IBatchSpout {
+public class FileReaderSpout implements IBatchSpout {
 
     private LinkedBlockingDeque<String> queue;
     private DataSource dataSource;
@@ -28,7 +28,7 @@ public class AccidentSpout implements IBatchSpout {
     BufferedReader br;
 
 
-    public AccidentSpout(DataSource dataSource, int batchSize, Fields outputFields, Integer[] indices) {
+    public FileReaderSpout(DataSource dataSource, int batchSize, Fields outputFields, Integer[] indices) {
         this.dataSource = dataSource;
         this.batchSize = batchSize;
         this.outputFields = outputFields;

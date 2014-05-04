@@ -1,4 +1,4 @@
-package no.bekk.storm.functions;
+package no.bekk.storm.solutions.functions;
 
 import storm.trident.operation.Function;
 import storm.trident.operation.TridentCollector;
