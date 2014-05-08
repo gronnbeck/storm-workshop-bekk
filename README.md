@@ -5,5 +5,3 @@
 ```sh
 awk -F "," '{ if ($1 in stored_lines) x=1; else print; stored_lines[$1]=1 }' Vehicles7904.csv.duplicates > outfile.csv
 ```
-
-### Begynne på oppgavene beskrevet i slidesene
